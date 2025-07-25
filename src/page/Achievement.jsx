@@ -38,18 +38,19 @@ export default function Achievement() {
 
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {stats.map((item, index) => (
-            <div
-              key={index}
-              className="bg-gray-50 border border-gray-200 rounded-xl py-10 px-4 shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                {item.icon}
-              </div>
-              <h3 className="text-3xl font-bold text-gray-900">{item.title}</h3>
-              <p className="text-gray-600 mt-2 text-sm">{item.subtitle}</p>
-            </div>
-          ))}
+         {stats.map((item, index) => (
+  <div
+    key={index}
+    className="bg-gray-50 border border-gray-200 rounded-xl py-10 px-4 shadow-sm hover:shadow-lg hover:shadow-red-500 transition-shadow duration-300"
+  >
+    <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+      {item.icon}
+    </div>
+    <h3 className="text-3xl font-bold text-gray-900">{item.title}</h3>
+    <p className="text-gray-600 mt-2 text-sm">{item.subtitle}</p>
+  </div>
+))}
+
         </div>
       </div>
     </section>

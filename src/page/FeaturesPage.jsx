@@ -61,15 +61,19 @@ export default function FeaturesPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {learnings.map((item, index) => (
-            <div key={index} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6">
-                {item.icon}
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">{item.title}</h3>
-              <p className="text-gray-600">{item.description}</p>
-            </div>
-          ))}
+         {learnings.map((item, index) => (
+  <div
+    key={index}
+    className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg hover:shadow-red-500 transition-shadow duration-300"
+  >
+    <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6">
+      {item.icon}
+    </div>
+    <h3 className="text-xl font-semibold text-gray-900 mb-4">{item.title}</h3>
+    <p className="text-gray-600">{item.description}</p>
+  </div>
+))}
+
         </div>
       </div>
     </section>

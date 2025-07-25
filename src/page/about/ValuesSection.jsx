@@ -37,7 +37,7 @@ export default function ValuesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our Core <span className="text-red-600 font-pacifico block">Values</span>
+            Our Core <span className="text-red-600 font-pacifico">Values</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             These principles guide everything we do at our academy.
@@ -46,12 +46,15 @@ export default function ValuesSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {values.map((value, index) => (
-            <div key={index} className="text-center">
+            <div
+              key={index}
+              className="text-center border border-gray-200 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow bg-white"
+            >
               <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 {value.icon}
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">{value.title}</h3>
-              <p className="text-gray-600">{value.description}</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">{value.title}</h3>
+              <p className="text-gray-600 text-sm">{value.description}</p>
             </div>
           ))}
         </div>

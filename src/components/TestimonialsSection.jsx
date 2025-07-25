@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import StarIcon from '@mui/icons-material/Star';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -63,17 +63,23 @@ const TestimonialsSection = () => {
   const next = () => setCurrent((prev) => (prev + 1) % testimonials.length);
   const prev = () => setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
+  // 🔁 Auto-slide every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(next, 5000);
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+
   return (
     <section className="py-20 pt-10 bg-red-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          What Our Students <span className="text-red-600 font-pacifico block">Say</span>
+          What Our Students <span className="text-red-600 font-pacifico">Say</span>
         </h2>
         <p className="text-xl text-gray-600 mb-12">
           Hear from those who learned the art of Kathak from Pooja
         </p>
 
-        <div className="bg-white shadow-lg rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
+        <div className="bg-white shadow-lg rounded-2xl p-8 md:p-12 max-w-4xl mx-auto transition-all duration-700 ease-in-out">
           <div className="flex justify-center mb-6">
             <AccountCircleIcon fontSize="large" className="text-red-500" />
           </div>
@@ -110,7 +116,7 @@ const TestimonialsSection = () => {
               <button
                 key={i}
                 onClick={() => setCurrent(i)}
-                className={`w-3 h-3 rounded-full ${
+                className={`w-3 h-3 rounded-full transition-all ${
                   i === current ? 'bg-red-600' : 'bg-gray-300'
                 }`}
               />

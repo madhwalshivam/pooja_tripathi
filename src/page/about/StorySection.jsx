@@ -6,13 +6,13 @@ export default function StorySection() {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          
+
           {/* Text */}
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-red-600 mb-8">
               About Us
             </h2>
-            <div className="prose prose-lg text-gray-600 space-y-6">
+            <div className="prose prose-lg text-gray-600 prose-strong:text-red-600 space-y-6">
               <p>
                 <strong>Kathak Nrityashala</strong> is a reputed Kathak learning academy in Noida, led by <strong>Pooja Tripathi</strong> of the <strong>Lucknow Gharana</strong>, known for her dedication to promoting classical dance among young learners.
               </p>
@@ -36,12 +36,14 @@ export default function StorySection() {
 
           {/* Image */}
           <div className="sticky top-24">
-            <img 
+            <img
               src={storyImage}
               alt="Pooja Tripathi performing Kathak"
-              className="rounded-2xl shadow-xl object-cover object-top w-full h-[700px]"
+              className="rounded-2xl shadow-xl object-cover object-top w-full h-[500px]"
+              loading="lazy"
             />
           </div>
+
         </div>
       </div>
     </section>

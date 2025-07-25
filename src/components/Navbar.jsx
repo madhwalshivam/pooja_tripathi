@@ -8,6 +8,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
+    { to: '/', label: 'Home' },
     { to: '/about', label: 'About' },
     { to: '/classes', label: 'Classes' },
     { to: '/feestructure', label: 'Fee Structure' },
@@ -29,19 +30,18 @@ const Header = () => {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-4">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 to={link.to}
-        className="text-white text-sm font-medium px-4 py-2 rounded-full border border-transparent bg-black/15 backdrop-blur-md transition-all duration-300 hover:bg-gradient-to-r hover:from-red-600 hover:to-amber-600 hover:from-red-700"
->
+                className="text-white text-sm font-medium px-4 py-2 rounded-full border border-transparent bg-black/15 backdrop-blur-md transition-all duration-300 hover:bg-gradient-to-r hover:from-red-600 hover:to-amber-600"
+              >
                 {link.label}
               </Link>
             ))}
-
             <Link to="/contact">
-              <button className="text-white text-sm font-medium px-4 py-2 rounded-full border border-transparent bg-black/15 backdrop-blur-md transition-all duration-300 hover:bg-gradient-to-r hover:from-red-600 hover:to-amber-600 hover:from-red-700">
+              <button className="text-white text-sm font-medium px-4 py-2 rounded-full border border-transparent bg-black/15 backdrop-blur-md transition-all duration-300 hover:bg-gradient-to-r hover:from-red-600 hover:to-amber-600">
                 Contact
               </button>
             </Link>
@@ -52,13 +52,17 @@ const Header = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden text-white hover:text-red-600"
           >
-            {isMenuOpen ? <CloseIcon fontSize="medium" /> : <MenuIcon fontSize="medium" />}
+            {isMenuOpen ? (
+              <CloseIcon fontSize="medium" />
+            ) : (
+              <MenuIcon fontSize="medium" />
+            )}
           </button>
         </div>
 
         {/* Mobile Nav Dropdown */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-amber-100 bg-white">
+          <div className="md:hidden py-4 border-t border-amber-100 bg-white shadow-md">
             <nav className="flex flex-col gap-4 px-4">
               {navLinks.map((link) => (
                 <Link
@@ -87,4 +91,5 @@ const Header = () => {
 };
 
 export default Header;
+
 
