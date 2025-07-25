@@ -1,11 +1,14 @@
 import React from 'react';
 import banner from '../assets/banner.jpg';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
 const Hero = () => {
   return (
     <section
-      id="home"
-      className="relative min-h-[80vh] md:min-h-screen flex items-center"
+  id="home"
+  className="relative min-h-[80vh] md:min-h-screen flex items-center mt-0 pt-0"
+
       style={{
         backgroundImage: `url(${banner})`,
         backgroundSize: 'cover',
@@ -20,12 +23,58 @@ const Hero = () => {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           {/* Heading */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            Find Your Inner
-            <span className="block bg-gradient-to-r from-red-600 to-amber-500 bg-clip-text text-transparent">
-              Peace
-            </span>
-          </h1>
+          <motion.h1
+  className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
+  initial="hidden"
+  animate="visible"
+  variants={{
+    visible: {
+      transition: {
+        staggerChildren: 0.05,
+      },
+    },
+  }}
+>
+  {"Find Your Inner".split("").map((char, index) => (
+    <motion.span
+      key={index}
+      variants={{
+        hidden: { opacity: 0, y: -20 },
+        visible: { opacity: 1, y: 0 },
+      }}
+      className="inline-block"
+    >
+      {char === " " ? "\u00A0" : char}
+    </motion.span>
+  ))}
+  <br />
+  <motion.span
+    className="block bg-gradient-to-r from-red-600 to-amber-500 bg-clip-text text-transparent"
+    variants={{
+      hidden: { opacity: 0 },
+      visible: {
+        opacity: 1,
+        transition: {
+          delay: 1.2,
+          duration: 0.8,
+        },
+      },
+    }}
+  >
+    {"Peace".split("").map((char, index) => (
+      <motion.span
+        key={index}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.3 + index * 0.05 }}
+        className="inline-block"
+      >
+        {char}
+      </motion.span>
+    ))}
+  </motion.span>
+</motion.h1>
+
 
           {/* Description */}
           <p className="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed mb-8">

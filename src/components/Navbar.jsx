@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import logo from '../assets/tlogo.jpg';
+import logo from '../assets/logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,7 +16,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md border-b border-amber-100">
+    <header className="fixed top-0 left-0 w-full z-50 bg-transparent">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -34,14 +34,14 @@ const Header = () => {
               <Link
                 key={link.label}
                 to={link.to}
-                className="text-gray-700 hover:text-red-600 text-sm font-medium transition-all"
-              >
+        className="text-white text-sm font-medium px-4 py-2 rounded-full border border-transparent bg-black/15 backdrop-blur-md transition-all duration-300 hover:bg-gradient-to-r hover:from-red-600 hover:to-amber-600 hover:from-red-700"
+>
                 {link.label}
               </Link>
             ))}
 
             <Link to="/contact">
-              <button className="bg-gradient-to-r from-red-600 to-amber-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:from-red-700 hover:to-amber-700 transition-all">
+              <button className="text-white text-sm font-medium px-4 py-2 rounded-full border border-transparent bg-black/15 backdrop-blur-md transition-all duration-300 hover:bg-gradient-to-r hover:from-red-600 hover:to-amber-600 hover:from-red-700">
                 Contact
               </button>
             </Link>
@@ -50,7 +50,7 @@ const Header = () => {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-gray-700 hover:text-red-600"
+            className="md:hidden text-white hover:text-red-600"
           >
             {isMenuOpen ? <CloseIcon fontSize="medium" /> : <MenuIcon fontSize="medium" />}
           </button>
@@ -58,7 +58,7 @@ const Header = () => {
 
         {/* Mobile Nav Dropdown */}
         {isMenuOpen && (
-          <div className="md:hidden mt-2 py-4 border-t border-amber-100 bg-white rounded shadow-sm">
+          <div className="md:hidden py-4 border-t border-amber-100 bg-white">
             <nav className="flex flex-col gap-4 px-4">
               {navLinks.map((link) => (
                 <Link
@@ -87,3 +87,4 @@ const Header = () => {
 };
 
 export default Header;
+
