@@ -1,10 +1,10 @@
 import React from 'react';
 import course1 from '../assets/course.webp';
-import course2 from '../assets/course1.jpg';
+import course2 from '../assets/banner1.avif';
 import course3 from '../assets/course2.jpg';
 import course4 from '../assets/course3.jpg';
-import course5 from '../assets/course4.webp';
-import course6 from '../assets/course5.jpg';
+import course5 from '../assets/bkr.jpg';
+import course6 from '../assets/dt.jpg';
 import { Link } from 'react-router-dom';
 
 const courses = [
@@ -34,9 +34,9 @@ const courses = [
     description: 'Get trained in professionally choreographed routines for weddings and special events.',
   },
   {
-    title: 'Bollywood Fusion',
+    title: 'School Kids Batch',
     image: course6,
-    description: 'Experience the energy of Bollywood with a fusion of Indian and Western dance styles.',
+    description: 'Specially curated for young school kids Fun, interactive Kathak sessions to spark their interest.',
   },
 ];
 

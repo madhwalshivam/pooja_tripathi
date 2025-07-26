@@ -19,7 +19,7 @@ export default function ClassesHero() {
         <div className="text-center text-white">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             Our
-            <span className="block text-red-600 font-pacifico">Classes</span>
+            <span className="block text-amber-600 font-pacifico">Classes</span>
           </h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto">
             Discover the perfect class for your skill level and dance goals

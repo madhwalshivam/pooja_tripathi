@@ -4,6 +4,14 @@ import intermediateImage from '../../assets/c.jpg';
 import advancedImage from '../../assets/c.jpg';
 import kidsImage from '../../assets/c.jpg';
 import courseImage from '../../assets/course.webp';
+import homeImage from '../../assets/home.jpg';
+import classImage from '../../assets/class1.jpg';
+import class1Image from '../../assets/dt.jpg';
+import class2Image from '../../assets/ph4.jpg';
+import class3Image from '../../assets/banner1.avif';
+import class4Image from '../../assets/course2.jpg';
+import class5Image from '../../assets/bkr.jpg';
+import class6Image from '../../assets/mutliple.jpg';
 
 
 export default function ClassLevels() {
@@ -18,7 +26,7 @@ export default function ClassLevels() {
         'Storytelling through dance',
         'Mini performances and confidence building'
       ],
-      image: kidsImage
+      image: class1Image
     },
     {
       title: 'Working Ladies Batch',
@@ -30,7 +38,7 @@ export default function ClassLevels() {
         'Rhythmic combinations and abhinaya',
         'Stress-relieving movement practice'
       ],
-      image: intermediateImage
+      image: classImage
     },
     {
       title: 'Homemakers Batch',
@@ -42,7 +50,7 @@ export default function ClassLevels() {
         'Expressive storytelling through dance',
         'Preparation for group performances'
       ],
-      image: beginnerImage
+      image:homeImage
     },
     {
       title: 'Senior Ladies Batch',
@@ -66,7 +74,7 @@ export default function ClassLevels() {
         'Focused individual or group training',
         'Customized syllabus and scheduling'
       ],
-      image: courseImage
+      image: class2Image
     }
   ];
 
@@ -93,7 +101,7 @@ export default function ClassLevels() {
         'Abhinaya and expressions',
         'Stage performance preparation'
       ],
-      image: intermediateImage
+      image: class3Image
     },
     {
       title: 'Semi-Classical',
@@ -105,7 +113,7 @@ export default function ClassLevels() {
         'Simplified classical steps',
         'Performance choreography'
       ],
-      image: advancedImage
+      image: class4Image
     },
     {
       title: 'Folk',
@@ -117,7 +125,7 @@ export default function ClassLevels() {
         'Community-style group movements',
         'Folk-based storytelling'
       ],
-      image: kidsImage
+      image: class5Image
     },
     {
       title: 'Choreographed Event Dance',
@@ -129,7 +137,7 @@ export default function ClassLevels() {
         'Quick-learning methods',
         'Stage presence and delivery'
       ],
-      image: advancedImage
+      image: class6Image
     }
   ];
 
@@ -162,7 +170,12 @@ Classes offered:
 
         {/* Batches Section */}
         <div>
-        <h2 className="text-4xl font-bold text-center text-red-600 mb-12 ">Current Batches</h2>
+          <h2 className="text-6xl font-bold text-center text-gray-800 b-2 mb-4">
+              <span className="bg-gradient-to-r from-red-600 to-amber-500  bg-clip-text text-transparent">
+              Current Batches
+              </span>
+              
+            </h2>
           <div className="space-y-16">
             {batches.map((level, index) => (
               <div
@@ -170,7 +183,12 @@ Classes offered:
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
               >
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <h3 className="text-2xl font-bold text-red-600 mb-4">{level.title}</h3>
+                  <h3 className="text-3xl font-bold  text-gray-800 b-2 mb-4">
+              <span className="bg-gradient-to-r from-red-600 to-amber-500  bg-clip-text text-transparent">
+            {level.title}
+              </span>
+              
+            </h3>
                   <p className="text-lg text-gray-600 mb-6">{level.description}</p>
                   <div className="bg-white p-6 rounded-lg shadow-sm">
                     <h4 className="text-lg font-semibold text-gray-900 mb-4">What You'll Learn</h4>
@@ -195,7 +213,12 @@ Classes offered:
 
         {/* Services Section */}
         <div>
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">Dance Forms We Teach</h2>
+           <h2 className="text-6xl font-bold text-center text-gray-800 b-2 mb-4">
+              <span className="bg-gradient-to-r from-red-600 to-amber-500  bg-clip-text text-transparent">
+           Dance Forms We Teach
+              </span>
+              
+            </h2>
           <div className="space-y-16">
             {services.map((service, index) => (
               <div
@@ -203,7 +226,12 @@ Classes offered:
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
               >
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
+                   <h3 className="text-3xl font-bold  text-gray-800 b-2 mb-4">
+              <span className="bg-gradient-to-r from-red-600 to-amber-500  bg-clip-text text-transparent">
+            {service.title}
+              </span>
+              
+            </h3>
                   <p className="text-lg text-gray-600 mb-6">{service.description}</p>
                   <div className="bg-white p-6 rounded-lg shadow-sm">
                     <h4 className="text-lg font-semibold text-gray-900 mb-4">What You'll Learn</h4>
@@ -226,13 +254,6 @@ Classes offered:
           </div>
         </div>
 
-        {/* Admission Note */}
-        <div className="bg-white p-8 rounded-xl shadow-md">
-          <h3 className="text-2xl font-bold text-red-600 mb-4">About Admission & Structure</h3>
-          <pre className="whitespace-pre-wrap text-gray-700 text-sm leading-relaxed">
-            {admissionNote}
-          </pre>
-        </div>
       </div>
     </section>
   );
