@@ -37,7 +37,7 @@ export default function CTASection() {
           animate={controls}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            {["Begin Your Journey with", "Pooja Tripathi’s Kathak Nrityalaya"].map((line, index) => (
+            {["Begin Your Journey with", "Kathak Nrityashala"].map((line, index) => (
               <motion.div
                 key={index}
                 variants={child}
