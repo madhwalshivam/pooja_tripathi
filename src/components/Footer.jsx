@@ -57,13 +57,11 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-  <h3 className="text-lg font-semibold text-red-600 mb-4">About Pooja Tripathi</h3>
+  <h3 className="text-lg font-semibold text-red-600 mb-4">About Us</h3>
   <p className="text-sm text-gray-300 leading-relaxed text-justify">
-    Pooja Tripathi, a Kathak dancer of the Lucknow Gharana, has trained under Guru Mamta Maharaj and Pt. Alok Banerjee. 
-    She holds degrees in Kathak, Tabla, and Vocal from reputed institutions.
+   Our studio is a vibrant hub of dance, music, and creativity, where students of all ages can express themselves freely.
     <br /><br />
-    She has performed at prestigious venues and received several cultural awards.
-    In her leisure, she enjoys fashion design and gardening.
+    From cultural events to modern movement, we aim to blend art with expression and help every learner grow with joy and confidence.
   </p>
 </div>
 

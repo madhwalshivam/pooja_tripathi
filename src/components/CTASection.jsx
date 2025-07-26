@@ -29,7 +29,7 @@ export default function CTASection() {
   }, [isInView, controls]);
 
   return (
-    <section className="py-20 bg-red-600" ref={ref}>
+    <section className="py-20 bg-gradient-to-r from-amber-600 to-red-600" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           variants={container}
