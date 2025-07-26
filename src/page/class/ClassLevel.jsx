@@ -14,6 +14,7 @@ import class3Image from '../../assets/banner1.avif';
 import class4Image from '../../assets/course2.jpg';
 import class5Image from '../../assets/bkr.jpg';
 import class6Image from '../../assets/mutliple.jpg';
+import { Link } from 'react-router-dom';
 
 export default function ClassLevels() {
   const batches = [
@@ -233,6 +234,15 @@ export default function ClassLevels() {
         </div>
 
       </div>
+          <div className="mt-12 text-center">
+              <p className="text-gray-600 mb-4">
+                Have questions about our pricing or need a custom plan?
+              </p>
+              <Link to="/contact" className="text-white text-sm font-medium px-4 py-2 rounded-full border border-transparent bg-black/50 backdrop-blur-md transition-all duration-300 hover:bg-gradient-to-r hover:from-red-600 hover:to-amber-600">
+                Contact Us
+              </Link>
+            </div>
     </section>
+
   );
 }

@@ -38,7 +38,6 @@ export default function Footer() {
           <ul className="space-y-2 text-gray-300">
             <li><Link to="/" className="hover:text-red-400">Home</Link></li>
             <li><Link to="/about" className="hover:text-red-400">About Us</Link></li>
-            <li><Link to="/feestructure" className="hover:text-red-400">Fee Structure</Link></li>
             <li><Link to="/gallery" className="hover:text-red-400">Gallery</Link></li>
             <li><Link to="/achievements" className="hover:text-red-400">Achievements</Link></li>
             <li><Link to="/contact" className="hover:text-red-400">Contact Us</Link></li>

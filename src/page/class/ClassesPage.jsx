@@ -9,6 +9,7 @@ const ClassPage = () => {
      <div className="min-h-screen bg-white">
         <ClassesHero/>   
         <ClassLevels/> 
+       
     </div>
   )
 }
