@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+
 import beginnerImage from '../../assets/c.jpg';
 import intermediateImage from '../../assets/c.jpg';
 import advancedImage from '../../assets/c.jpg';
@@ -12,7 +14,6 @@ import class3Image from '../../assets/banner1.avif';
 import class4Image from '../../assets/course2.jpg';
 import class5Image from '../../assets/bkr.jpg';
 import class6Image from '../../assets/mutliple.jpg';
-
 
 export default function ClassLevels() {
   const batches = [
@@ -50,7 +51,7 @@ export default function ClassLevels() {
         'Expressive storytelling through dance',
         'Preparation for group performances'
       ],
-      image:homeImage
+      image: homeImage
     },
     {
       title: 'Senior Ladies Batch',
@@ -141,41 +142,17 @@ export default function ClassLevels() {
     }
   ];
 
-  const admissionNote = `"Kathak Nrityashala" is open to all enthusiasts 7 days a week (10AM–8PM). 
-But as every form needs discipline, admission to the class depends on the individual's commitment.
-
-Minimum age for admission is 5 years due to the theoretical aspects of Kathak.
-
-The Nrityashala ensures authenticity through yearly exams in affiliation with Prayag Sangeet Samiti, Prayagraj.
-
-Current batches include:
-- School-going kids (weekend/evening)
-- Working ladies (late evening)
-- Homemakers & senior ladies (weekday daytime)
-- Customized batches as per requirement
-
-Dance forms taught:
-- Kathak (original)
-- Classical / Semi-classical / Folk
-- Choreographed event dances
-
-Admission to any class is based on mentor recommendation.
-Classes offered:
-- Praveshika, First to Sixth Year
-- Beyond Sixth Year: Performance-based entry by mentor decision.`;
-
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
 
         {/* Batches Section */}
         <div>
-          <h2 className="text-6xl font-bold text-center text-gray-800 b-2 mb-4">
-              <span className="bg-gradient-to-r from-red-600 to-amber-500  bg-clip-text text-transparent">
+          <h2 className="text-6xl font-bold text-center text-gray-800 mb-4">
+            <span className="bg-gradient-to-r from-red-600 to-amber-500 bg-clip-text text-transparent">
               Current Batches
-              </span>
-              
-            </h2>
+            </span>
+          </h2>
           <div className="space-y-16">
             {batches.map((level, index) => (
               <div
@@ -183,12 +160,11 @@ Classes offered:
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
               >
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <h3 className="text-3xl font-bold  text-gray-800 b-2 mb-4">
-              <span className="bg-gradient-to-r from-red-600 to-amber-500  bg-clip-text text-transparent">
-            {level.title}
-              </span>
-              
-            </h3>
+                  <h3 className="text-3xl font-bold text-gray-800 mb-4">
+                    <span className="bg-gradient-to-r from-red-600 to-amber-500 bg-clip-text text-transparent">
+                      {level.title}
+                    </span>
+                  </h3>
                   <p className="text-lg text-gray-600 mb-6">{level.description}</p>
                   <div className="bg-white p-6 rounded-lg shadow-sm">
                     <h4 className="text-lg font-semibold text-gray-900 mb-4">What You'll Learn</h4>
@@ -199,13 +175,15 @@ Classes offered:
                     </ul>
                   </div>
                 </div>
-                <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <img
-                    src={level.image}
-                    alt="Kathak class"
-                    className="rounded-2xl shadow-lg object-cover object-top w-full h-80"
-                  />
-                </div>
+                <motion.img
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, ease: 'easeOut' }}
+                  viewport={{ once: true }}
+                  src={level.image}
+                  alt="Kathak class"
+                  className="rounded-2xl shadow-lg object-cover object-top w-full h-80 lg:order-1"
+                />
               </div>
             ))}
           </div>
@@ -213,12 +191,11 @@ Classes offered:
 
         {/* Services Section */}
         <div>
-           <h2 className="text-6xl font-bold text-center text-gray-800 b-2 mb-4">
-              <span className="bg-gradient-to-r from-red-600 to-amber-500  bg-clip-text text-transparent">
-           Dance Forms We Teach
-              </span>
-              
-            </h2>
+          <h2 className="text-6xl font-bold text-center text-gray-800 mb-4">
+            <span className="bg-gradient-to-r from-red-600 to-amber-500 bg-clip-text text-transparent">
+              Dance Forms We Teach
+            </span>
+          </h2>
           <div className="space-y-16">
             {services.map((service, index) => (
               <div
@@ -226,12 +203,11 @@ Classes offered:
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
               >
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                   <h3 className="text-3xl font-bold  text-gray-800 b-2 mb-4">
-              <span className="bg-gradient-to-r from-red-600 to-amber-500  bg-clip-text text-transparent">
-            {service.title}
-              </span>
-              
-            </h3>
+                  <h3 className="text-3xl font-bold text-gray-800 mb-4">
+                    <span className="bg-gradient-to-r from-red-600 to-amber-500 bg-clip-text text-transparent">
+                      {service.title}
+                    </span>
+                  </h3>
                   <p className="text-lg text-gray-600 mb-6">{service.description}</p>
                   <div className="bg-white p-6 rounded-lg shadow-sm">
                     <h4 className="text-lg font-semibold text-gray-900 mb-4">What You'll Learn</h4>
@@ -242,13 +218,15 @@ Classes offered:
                     </ul>
                   </div>
                 </div>
-                <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <img
-                    src={service.image}
-                    alt="Dance style"
-                    className="rounded-2xl shadow-lg object-cover object-top w-full h-80"
-                  />
-                </div>
+                <motion.img
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, ease: 'easeOut' }}
+                  viewport={{ once: true }}
+                  src={service.image}
+                  alt="Dance style"
+                  className="rounded-2xl shadow-lg object-cover object-top w-full h-80 lg:order-1"
+                />
               </div>
             ))}
           </div>
