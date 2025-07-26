@@ -148,7 +148,7 @@ export default function ClassLevels() {
 
         {/* Batches Section */}
         <div>
-          <h2 className="text-6xl font-bold text-center text-gray-800 mb-4">
+          <h2 className="text-4xl font-bold text-center text-gray-800 mb-4">
             <span className="bg-gradient-to-r from-red-600 to-amber-500 bg-clip-text text-transparent">
               Current Batches
             </span>
@@ -191,7 +191,7 @@ export default function ClassLevels() {
 
         {/* Services Section */}
         <div>
-          <h2 className="text-6xl font-bold text-center text-gray-800 mb-4">
+          <h2 className="text-4xl font-bold text-center text-gray-800 mb-4">
             <span className="bg-gradient-to-r from-red-600 to-amber-500 bg-clip-text text-transparent">
               Dance Forms We Teach
             </span>
