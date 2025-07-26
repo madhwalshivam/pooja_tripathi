@@ -33,32 +33,38 @@ export default function ValuesSection() {
   ];
 
   return (
-    <section className="py-20 pt-5 bg-white">
+    <section className="py-10 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our Core <span className="text-red-600 font-pacifico">Values</span>
-          </h2>
+          <h1 className="text-4xl font-bold text-gray-800 mb-4 py-5">
+            <span className="bg-gradient-to-r from-red-600 to-amber-500 bg-clip-text text-transparent">
+              Our Core Values
+            </span>
+          </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             These principles guide everything we do at our academy.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {values.map((value, index) => (
             <div
               key={index}
-              className="text-center border border-gray-200 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow bg-white"
+              className="bg-gradient-to-r from-amber-600 to-red-600 rounded-2xl py-12 px-6 shadow-md hover:shadow-lg transition-shadow duration-300"
             >
-              <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
                 <img
                   src={value.img}
                   alt={value.title}
                   className="w-10 h-10 object-contain"
                 />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{value.title}</h3>
-              <p className="text-gray-600 text-sm">{value.description}</p>
+              <h3 className="text-xl font-semibold text-white text-center mb-3">
+                {value.title}
+              </h3>
+              <p className="text-white text-sm text-center leading-relaxed">
+                {value.description}
+              </p>
             </div>
           ))}
         </div>

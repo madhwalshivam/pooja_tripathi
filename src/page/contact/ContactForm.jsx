@@ -45,9 +45,11 @@ export default function ContactForm() {
     <section className="py-20 bg-gray-50">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Book Your First Class
-          </h2>
+           <h2 className="text-3xl font-bold text-gray-800 mb-4 py-5">
+              <span className="bg-gradient-to-r from-red-600 to-amber-500 bg-clip-text text-transparent">
+                 Book Your First Class
+              </span>              
+            </h2>
           <p className="text-lg text-gray-600">
             Fill out the form below and we'll get back to you within 24 hours
           </p>

@@ -3,43 +3,40 @@ import storyImage from '../../assets/img4.webp';
 
 export default function StorySection() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
 
-          {/* Text */}
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-red-600 mb-8">
-              About Us
+          {/* Text Card */}
+          <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 flex flex-col justify-center animate-fade-in-up">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+              <span className="bg-gradient-to-r from-red-600 to-amber-500 bg-clip-text text-transparent">
+                About Us
+              </span>
+              <div className="h-[3px] w-16 bg-red-600 mt-2 rounded-full" />
             </h2>
-            <div className="prose prose-lg text-gray-600 prose-strong:text-red-600 space-y-6">
+            <div className="text-gray-700 space-y-4 text-base leading-relaxed text-justify">
               <p>
-                <strong>Kathak Nrityashala</strong> is a reputed Kathak learning academy in Noida, led by <strong>Pooja Tripathi</strong> of the <strong>Lucknow Gharana</strong>, known for her dedication to promoting classical dance among young learners.
+                Kathak Nrityashala is a classical dance academy located in Noida, established by Pooja Tripathi. She belongs to the Lucknow Gharana and has dedicated her life to spreading the rich tradition of Kathak.
               </p>
               <p>
-                With over <strong>25 years of experience</strong>, Pooja ji has trained hundreds of students, instilling in them not only the techniques of Kathak but also its rich cultural roots.
+                With more than 25 years of experience, she has mentored countless students, helping them develop not only as dancers but also as confident individuals connected to their culture.
               </p>
               <p>
-                She trained under <strong>Guru Mamta Maharaj</strong>, daughter of <strong>Padma Vibhushan Pt. Birju Maharaj</strong>, and holds top honors like <strong>Prabhakar</strong>, <strong>Visharad</strong>, and <strong>Naveen</strong> in Kathak, Tabla, and Vocal from <strong>Prayag Sangeet Samiti</strong> and <strong>Pracheen Kala Kendra</strong>.
+                She received training under Guru Mamta Maharaj and holds certifications in Kathak, Tabla, and Vocal from prestigious institutions like Prayag Sangeet Samiti and Pracheen Kala Kendra.
               </p>
               <p>
-                She has received awards from <strong>Sangeet Natak Akademi</strong> and recognitions like the <strong>Sarojini Naidu International Women Award</strong> and <strong>Women Achiever Award</strong> for her contribution to classical dance.
-              </p>
-              <p>
-                Her students have performed at prestigious events such as <strong>Surajkund Mela</strong>, <strong>Triveni Kala Sangam</strong>, and <strong>Indira Gandhi Kala Kendra</strong>, making Kathak accessible to wider audiences.
-              </p>
-              <p>
-                Besides dance, she’s passionate about <strong>fashion design</strong>, <strong>gardening</strong>, and creative expression, which further enriches her teaching style and connection with students.
+                Her students have graced renowned stages such as Surajkund Mela, Triveni Kala Sangam, and Indira Gandhi Kala Kendra, showcasing their talent in front of large audiences.
               </p>
             </div>
           </div>
 
           {/* Image */}
-          <div className="sticky top-24">
+          <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-white transition-transform hover:scale-105 duration-300 ease-in-out animate-fade-in">
             <img
               src={storyImage}
               alt="Pooja Tripathi performing Kathak"
-              className="rounded-2xl shadow-xl object-cover object-top w-full h-[500px]"
+              className="w-full h-full object-cover object-top"
               loading="lazy"
             />
           </div>

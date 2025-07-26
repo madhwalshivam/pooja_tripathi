@@ -6,12 +6,14 @@ import {
 
 export default function LocationMap() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-10 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Find Our Studio
-          </h2>
+           <h2 className="text-3xl font-bold text-gray-800 mb-4 py-2">
+              <span className="bg-gradient-to-r from-red-600 to-amber-500 bg-clip-text text-transparent">
+                 Find Our Studio
+              </span>              
+            </h2>
           <p className="text-lg text-gray-600">
             Located in the heart of Noida, easily accessible by public transport
           </p>
@@ -35,8 +37,8 @@ export default function LocationMap() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Public Transport */}
               <div className="text-center">
-                <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <DirectionsSubwayOutlined className="text-red-600" />
+                <div className="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <DirectionsSubwayOutlined className="text-amber-600" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Public Transport</h3>
                 <p className="text-gray-600 text-sm">
@@ -47,8 +49,8 @@ export default function LocationMap() {
 
               {/* Parking */}
               <div className="text-center">
-                <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <DirectionsCarOutlined className="text-red-600" />
+                <div className="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <DirectionsCarOutlined className="text-amber-600" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Parking</h3>
                 <p className="text-gray-600 text-sm">
@@ -59,8 +61,8 @@ export default function LocationMap() {
 
               {/* Landmarks */}
               <div className="text-center">
-                <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <LocationOnOutlined className="text-red-600" />
+                <div className="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <LocationOnOutlined className="text-amber-600" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Landmarks</h3>
                 <p className="text-gray-600 text-sm">

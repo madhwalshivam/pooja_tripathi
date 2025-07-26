@@ -31,10 +31,13 @@ export default function Achievement() {
   return (
     <section className="py-20 pt-10 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-4xl font-bold text-gray-900 mb-12 flex items-center justify-center gap-2">
-          <img src={awardImg} alt="Achievements" className="w-8 h-8" />
-          Our <span className="text-red-600 font-pacifico">Achievements</span>
-        </h2>
+         <h2 className="text-3xl font-bold text-gray-800 mb-4 py-5">
+              <span className="bg-gradient-to-r from-red-600 to-amber-500 bg-clip-text text-transparent">
+                 Our Achievements
+              </span>
+              
+            </h2>
+
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((item, index) => (

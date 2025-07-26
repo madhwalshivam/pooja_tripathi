@@ -3,6 +3,8 @@ import beginnerImage from '../../assets/c.jpg';
 import intermediateImage from '../../assets/c.jpg';
 import advancedImage from '../../assets/c.jpg';
 import kidsImage from '../../assets/c.jpg';
+import courseImage from '../../assets/course.webp';
+
 
 export default function ClassLevels() {
   const batches = [
@@ -64,7 +66,7 @@ export default function ClassLevels() {
         'Focused individual or group training',
         'Customized syllabus and scheduling'
       ],
-      image: intermediateImage
+      image: courseImage
     }
   ];
 
@@ -79,7 +81,7 @@ export default function ClassLevels() {
         'Spins (chakkars) and mudras',
         'Theoretical foundations'
       ],
-      image: beginnerImage
+      image: courseImage
     },
     {
       title: 'Classical',

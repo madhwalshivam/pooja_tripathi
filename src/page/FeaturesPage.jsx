@@ -41,19 +41,27 @@ export default function FeaturesPage() {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-10 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Why Choose <span className="text-red-600 font-pacifico">Kathak?</span>
-          </h2>
+           <h2 className="text-3xl font-bold text-gray-800 mb-4">
+              <span className="bg-gradient-to-r from-red-600 to-amber-500 bg-clip-text text-transparent">
+                Why Choose Kathak?
+              </span>
+              
+            </h2>        
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Kathak is more than just dance—it’s a way of expressing stories and emotions through intricate footwork, swift spins, and subtle gestures.
           </p>
         </div>
 
         <div className="text-center mb-12">
-          <h3 className="text-2xl font-bold text-gray-800 mb-4">What You’ll Learn</h3>
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">
+              <span className="bg-gradient-to-r from-red-600 to-amber-500 bg-clip-text text-transparent">
+                What You’ll Learn
+              </span>
+              
+            </h2> 
           <p className="text-gray-600 max-w-2xl mx-auto">
             Whether you're a beginner or looking to deepen your practice, our Kathak program guides you through the art—from basic postures to stage presence.
           </p>

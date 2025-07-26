@@ -9,10 +9,15 @@ const galleryImages = [img1, img2, img3, img4];
 
 const HomeGallery = () => {
   return (
-    <section id="gallery" className="py-20 bg-gradient-to-b from-amber-50 to-white">
+    <section id="gallery" className="py-10 bg-gradient-to-b from-amber-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-red-800 mb-4">Gallery</h2>
+           <h2 className="text-3xl font-bold text-gray-800 mb-4">
+              <span className="bg-gradient-to-r from-red-600 to-amber-500 bg-clip-text text-transparent">
+                 Gallery
+              </span>           
+            </h2>
+          
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Witness the beauty and grace of Kathak through our collection of performance moments 
             and student achievements.

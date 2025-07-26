@@ -42,11 +42,14 @@ const courses = [
 
 const CoursesSection = () => {
   return (
-    <section className="py-12 px-4 bg-gray-100">
+    <section className="py-5 px-4 bg-gray-100">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-10">
-          Our Popular<span className="text-red-600 font-pacifico"> Classes</span>
-        </h2>
+         <h1 className="text-4xl font-bold text-gray-800 mb-4 py-5">
+              <span className="bg-gradient-to-r from-red-600 to-amber-500 bg-clip-text text-transparent">
+               Our Popular Classes
+              </span>
+              
+            </h1> 
 
         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
           {courses.map((course, index) => (
@@ -66,12 +69,13 @@ const CoursesSection = () => {
                 <p className="text-sm text-gray-600 mb-4 flex-grow">
                   {course.description}
                 </p>
-                <Link
+           <Link
   to="/contact"
-  className="inline-block bg-red-600 text-white text-sm font-medium px-4 py-2 rounded hover:bg-red-700 transition self-start"
+  className="bg-gradient-to-r from-red-600 to-amber-600 text-white text-center px-3 py-2 rounded-full font-medium hover:from-red-700 hover:to-amber-700 transition-all text-sm"
 >
   Enquiry
 </Link>
+
               </div>
             </div>
           ))}
