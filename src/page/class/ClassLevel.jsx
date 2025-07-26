@@ -160,7 +160,7 @@ export default function ClassLevels() {
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
               >
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <h3 className="text-3xl font-bold text-gray-800 mb-4">
+                  <h3 className="text-2xl font-bold text-gray-800 mb-4">
                     <span className="bg-gradient-to-r from-red-600 to-amber-500 bg-clip-text text-transparent">
                       {level.title}
                     </span>
@@ -203,7 +203,7 @@ export default function ClassLevels() {
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
               >
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <h3 className="text-3xl font-bold text-gray-800 mb-4">
+                  <h3 className="text-2xl font-bold text-gray-800 mb-4">
                     <span className="bg-gradient-to-r from-red-600 to-amber-500 bg-clip-text text-transparent">
                       {service.title}
                     </span>
