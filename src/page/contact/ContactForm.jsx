@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 export default function ContactForm() {
@@ -22,40 +23,61 @@ export default function ContactForm() {
   };
 
   const handleSubmit = (e) => {
-  e.preventDefault();
-  setIsSubmitting(true);
-  setSubmitStatus('');
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('');
 
-  setTimeout(() => {
-    setSubmitStatus('Thank you for your message! We will get back to you soon.');
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      age: '',
-      experience: '',
-      classType: '',
-      message: ''
-    });
-    setIsSubmitting(false);
-  }, 1500); 
-};
+    const now = new Date();
+    const formattedTime = now.toLocaleString();
+
+    const emailPayload = {
+      ...formData,
+      time: formattedTime
+    };
+
+    emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      emailPayload,
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    ).then(
+      () => {
+        setSubmitStatus('Thank you for your message! We will get back to you soon.');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          age: '',
+          experience: '',
+          classType: '',
+          message: ''
+        });
+        setIsSubmitting(false);
+      },
+      (error) => {
+        console.error('EmailJS Error:', error);
+        setSubmitStatus('Failed to send message. Please try again later.');
+        setIsSubmitting(false);
+      }
+    );
+  };
 
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-           <h2 className="text-3xl font-bold text-gray-800 mb-4 py-5">
-              <span className="bg-gradient-to-r from-red-600 to-amber-500 bg-clip-text text-transparent">
-                 Book Your First Class
-              </span>              
-            </h2>
+          <h2 className="text-3xl font-bold text-gray-800 mb-4 py-5">
+            <span className="bg-gradient-to-r from-red-600 to-amber-500 bg-clip-text text-transparent">
+              Book Your First Class
+            </span>
+          </h2>
           <p className="text-lg text-gray-600">
             Fill out the form below and we'll get back to you within 24 hours
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Name & Email */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
@@ -83,6 +105,7 @@ export default function ContactForm() {
             </div>
           </div>
 
+          {/* Phone & Age */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
@@ -110,6 +133,7 @@ export default function ContactForm() {
             </div>
           </div>
 
+          {/* Experience & Class Type */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Dance Experience</label>
@@ -146,7 +170,7 @@ export default function ContactForm() {
                   <option value="advanced">Semi-Classical Dance</option>
                   <option value="kids">Folk Dance</option>
                   <option value="private">Choreographed Dance Events</option>
-                  <option value="private">Others</option>
+                  <option value="others">Others</option>
                 </select>
                 <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none">
                   <KeyboardArrowDownIcon />
@@ -155,6 +179,7 @@ export default function ContactForm() {
             </div>
           </div>
 
+          {/* Message */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">Additional Message</label>
             <textarea
@@ -171,14 +196,16 @@ export default function ContactForm() {
             </p>
           </div>
 
+          {/* Submit Button */}
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-gradient-to-r from-red-600 to-amber-600 text-white py-4 px-6 rounded-lg font-medium hover:bg-gradient-to-r from-red-600 to-amber-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-gradient-to-r from-red-600 to-amber-600 text-white py-4 px-6 rounded-lg font-medium hover:opacity-90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? 'Sending...' : 'Send Message'}
           </button>
 
+          {/* Status Message */}
           {submitStatus && (
             <div
               className={`text-center p-4 rounded-lg ${
@@ -195,3 +222,4 @@ export default function ContactForm() {
     </section>
   );
 }
+
