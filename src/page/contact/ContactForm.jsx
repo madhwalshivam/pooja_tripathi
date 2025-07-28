@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import emailjs from '@emailjs/browser';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 export default function ContactForm() {
@@ -10,18 +9,16 @@ export default function ContactForm() {
     age: '',
     experience: '',
     classType: '',
-    message: '',
+    message: ''
   });
-
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   };
 
   const handleSubmit = (e) => {
@@ -29,46 +26,27 @@ export default function ContactForm() {
     setIsSubmitting(true);
     setSubmitStatus('');
 
-    const now = new Date();
-    const formattedTime = now.toLocaleString();
-
-    const payload = {
-      ...formData,
-      time: formattedTime,
-    };
-
-    emailjs
-      .send(
-        'service_l1pwnv7',
-        'template_roe7wjv',
-        payload,
-        'o5X5iqFHhGIHDBsEv'
-      )
-      .then(
-        () => {
-          setSubmitStatus('Thank you for your message! We will get back to you soon.');
-          setFormData({
-            name: '',
-            email: '',
-            phone: '',
-            age: '',
-            experience: '',
-            classType: '',
-            message: '',
-          });
-          setIsSubmitting(false);
-        },
-        (error) => {
-          console.error('EmailJS Error:', error);
-          setSubmitStatus('Failed to send message. Please try again later.');
-          setIsSubmitting(false);
-        }
-      );
+    setTimeout(() => {
+      setSubmitStatus('Thank you for your message! We will get back to you soon.');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        age: '',
+        experience: '',
+        classType: '',
+        message: ''
+      });
+      setIsSubmitting(false);
+    }, 1500);
   };
 
+  // Gradient border wrapper
   const GradientWrapper = ({ children }) => (
     <div className="p-[2px] bg-gradient-to-r from-red-600 to-amber-500 rounded-lg">
-      <div className="bg-white rounded-lg">{children}</div>
+      <div className="bg-white rounded-lg">
+        {children}
+      </div>
     </div>
   );
 
@@ -87,7 +65,6 @@ export default function ContactForm() {
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Name & Email */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
@@ -98,7 +75,7 @@ export default function ContactForm() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg text-sm focus:outline-none"
+                  className="w-full px-4 py-3 rounded-lg focus:outline-none text-sm"
                   placeholder="Enter your full name"
                 />
               </GradientWrapper>
@@ -112,14 +89,13 @@ export default function ContactForm() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg text-sm focus:outline-none"
+                  className="w-full px-4 py-3 rounded-lg focus:outline-none text-sm"
                   placeholder="Enter your email"
                 />
               </GradientWrapper>
             </div>
           </div>
 
-          {/* Phone & Age */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
@@ -129,7 +105,7 @@ export default function ContactForm() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg text-sm focus:outline-none"
+                  className="w-full px-4 py-3 rounded-lg focus:outline-none text-sm"
                   placeholder="Enter your phone number"
                 />
               </GradientWrapper>
@@ -144,14 +120,13 @@ export default function ContactForm() {
                   onChange={handleChange}
                   min="5"
                   max="80"
-                  className="w-full px-4 py-3 rounded-lg text-sm focus:outline-none"
+                  className="w-full px-4 py-3 rounded-lg focus:outline-none text-sm"
                   placeholder="Enter your age"
                 />
               </GradientWrapper>
             </div>
           </div>
 
-          {/* Experience & Class Type */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Dance Experience</label>
@@ -202,7 +177,6 @@ export default function ContactForm() {
             </div>
           </div>
 
-          {/* Message */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">Additional Message</label>
             <GradientWrapper>
@@ -214,14 +188,13 @@ export default function ContactForm() {
                 maxLength={500}
                 className="w-full px-4 py-3 rounded-lg text-sm resize-none focus:outline-none"
                 placeholder="Tell us about your goals, questions, or any specific needs..."
-              ></textarea>
+              />
             </GradientWrapper>
-            <div className="text-right text-xs text-gray-500 mt-1">
+            <p className="text-xs text-gray-500 mt-1">
               {formData.message.length}/500 characters
-            </div>
+            </p>
           </div>
 
-          {/* Submit Button */}
           <button
             type="submit"
             disabled={isSubmitting}
@@ -230,7 +203,6 @@ export default function ContactForm() {
             {isSubmitting ? 'Sending...' : 'Send Message'}
           </button>
 
-          {/* Status Message */}
           {submitStatus && (
             <div
               className={`text-center p-4 rounded-lg ${
