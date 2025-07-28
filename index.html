@@ -2,11 +2,41 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/tlogo.jpg" />
+    <link rel="icon" type="image/jpeg" href="/tlogo.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kathak Nrityalaya - Pooja Tripathi's Classical Dance Academyt</title>
+    
+    <!-- ✅ Page Title -->
+    <title>Kathak Nrityalaya - Pooja Tripathi's Classical Dance Academy</title>
+
+    <!-- ✅ Force light mode in all browsers (including iOS, Android, macOS) -->
+    <meta name="color-scheme" content="light" />
+
+    <!-- ✅ Configure Tailwind to disable dark mode -->
+    <script>
+      tailwind.config = {
+        darkMode: false, // Force disable dark mode
+        theme: {
+          extend: {},
+        },
+      };
+    </script>
+
+    <!-- ✅ Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- ✅ Force light background and UI color -->
+    <style>
+      html {
+        color-scheme: light;
+        background-color: white;
+      }
+      body {
+        background-color: white;
+        color: black;
+      }
+    </style>
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
