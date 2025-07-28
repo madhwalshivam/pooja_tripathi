@@ -1,10 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
-import beginnerImage from '../../assets/c.jpg';
-import intermediateImage from '../../assets/c.jpg';
 import advancedImage from '../../assets/c.jpg';
-import kidsImage from '../../assets/c.jpg';
 import courseImage from '../../assets/course.webp';
 import homeImage from '../../assets/home.jpg';
 import classImage from '../../assets/class1.jpg';

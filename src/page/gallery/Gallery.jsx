@@ -104,7 +104,11 @@ export default function Gallery() {
         >
           <div className="absolute inset-0 bg-black/40"></div>
           <div className="relative z-10 text-center text-white px-6">
-            <h1 className="text-5xl md:text-6xl text-red-600 font-bold mb-4">Gallery</h1>
+              <h1 className="text-5xl font-bold text-gray-800 mb-4">
+            <span className="bg-gradient-to-r from-red-600 to-amber-500 bg-clip-text text-transparent">
+             Gallery
+            </span>
+          </h1>
             <p className="text-xl md:text-2xl">Capturing the beauty and elegance of Kathak dance</p>
           </div>
         </section>

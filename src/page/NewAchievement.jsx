@@ -1,80 +1,119 @@
- 
- import React from 'react';
-import bannerImage from '../assets/dv.jpg'; 
+import React from 'react';
+import { motion } from 'framer-motion';
+import bannerImage from '../assets/dv.jpg';
+import award1 from '../assets/award.jpeg';
+import award2 from '../assets/award1.jpg';
+import award3 from '../assets/ioi.jpg';
+import perf1 from '../assets/awardd.jpg';
+import perf2 from '../assets/rt.jpg';
+import perf3 from '../assets/kj.jpg';
+import perf4 from '../assets/dt.jpg';
 
 export default function AchievementPage() {
+  const achievements = [
+    {
+      title: 'Women’s Achiever Award',
+      image: award1,
+      description: 'Recognized for outstanding contributions and excellence in classical dance.',
+    },
+    {
+      title: 'Sashakt Nari Award',
+      image: award2,
+      description: 'Honored as a symbol of empowered womanhood in the performing arts.',
+    },
+    {
+      title: 'Sarojini Naidu International Award',
+      image: award3,
+      description: 'A prestigious honor for cultural excellence and international recognition.',
+    },
+    {
+      title: 'Performance at Kumbh Mela, Kalagram, Prayagraj',
+      image: perf1,
+      description: 'A soul-stirring Kathak performance during the world’s largest spiritual gathering.',
+    },
+    {
+      title: 'Performance at Indira Gandhi Auditorium',
+      image: perf2,
+      description: 'A mesmerizing showcase of classical art at a renowned cultural venue.',
+    },
+    {
+      title: 'Performance at Triveni Kala Kendra',
+      image: perf3,
+      description: 'A graceful performance at one of Delhi’s iconic art institutions.',
+    },
+    {
+      title: 'Judge at Modern School, New Delhi',
+      image: perf4,
+      description: 'Served as a chief guest and judge for a prestigious inter-school dance competition.',
+    }
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
       <main className="flex-1">
         {/* Hero Section */}
-        <section 
+        <section
           className="relative h-96 flex items-center justify-center bg-cover bg-center"
           style={{ backgroundImage: `url(${bannerImage})` }}
         >
           <div className="absolute inset-0 bg-black/40"></div>
-         <div className="relative z-10 text-center text-white px-6">
-  <h1 className="text-5xl md:text-6xl text-red-600 font-bold mb-4">Achievements</h1>
-  <p className="text-xl md:text-2xl">Celebrating our journey of dedication, excellence, and recognition in the world of Kathak</p>
-</div>
+          <div className="relative z-10 text-center text-white px-6">
+            <h1 className="text-5xl font-bold text-gray-800 mb-4">
+            <span className="bg-gradient-to-r from-red-600 to-amber-500 bg-clip-text text-transparent">
+             Achievements
+            </span>
+          </h1>
+            <p className="text-xl md:text-2xl">
+              Celebrating our journey of dedication, excellence, and recognition in the world of Kathak
+            </p>
+          </div>
         </section>
 
-        {/* Student Achievements Section */}
+    
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6">
-         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
+            <div className="text-center mb-16">
+              <motion.h2
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+                className="text-4xl font-bold text-gray-800 mb-4"
+              >
                 <span className="bg-gradient-to-r from-red-600 to-amber-500 bg-clip-text text-transparent">
-                  Pooja Tripathi's Achievements
+                  Pooja Tripathi's Achievements & Performances
                 </span>
-              </h2>
-  <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-    Honoring Guru Pooja Tripathi’s remarkable journey in Kathak — her dedication, accolades, and the legacy she's building through dance.
-  </p>
-</div>
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-xl text-gray-600 max-w-3xl mx-auto"
+              >
+                A tribute to the awards received and the iconic stages graced by Guru Pooja Tripathi.
+              </motion.p>
+            </div>
 
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Achievement Card 1 */}
-              <div className="text-center p-8 bg-amber-50 rounded-2xl">
-                <img 
-                  src="https://readdy.ai/api/search-image?query=Young%20kathak%20dancer%20receiving%20award%20or%20trophy%20at%20dance%20competition%2C%20achievement%20celebration%2C%20proud%20moment%2C%20high%20quality%20photography&width=300&height=300&seq=achievement1&orientation=squarish"
-                  alt="Competition Winner"
-                  className="w-24 h-24 rounded-full object-cover object-top mx-auto mb-6"
-                />
-                <h3 className="text-xl font-bold text-gray-800 mb-2">Priya Sharma</h3>
-                <p className="text-amber-600 font-semibold mb-2">First Place - Regional Competition</p>
-                <p className="text-gray-600 text-sm">
-                  "Winning this competition was a dream come true. The training here prepared me for every challenge."
-                </p>
-              </div>
-
-              {/* Achievement Card 2 */}
-              <div className="text-center p-8 bg-amber-50 rounded-2xl">
-                <img 
-                  src="https://readdy.ai/api/search-image?query=Adult%20kathak%20dancer%20performing%20at%20cultural%20festival%2C%20confident%20performance%2C%20traditional%20costume%2C%20high%20quality%20photography&width=300&height=300&seq=achievement2&orientation=squarish"
-                  alt="Cultural Ambassador"
-                  className="w-24 h-24 rounded-full object-cover object-top mx-auto mb-6"
-                />
-                <h3 className="text-xl font-bold text-gray-800 mb-2">Rajesh Kumar</h3>
-                <p className="text-amber-600 font-semibold mb-2">Cultural Ambassador</p>
-                <p className="text-gray-600 text-sm">
-                  "Representing our culture internationally has been the highlight of my dance journey."
-                </p>
-              </div>
-
-              {/* Achievement Card 3 */}
-              <div className="text-center p-8 bg-amber-50 rounded-2xl">
-                <img 
-                  src="https://readdy.ai/api/search-image?query=Kathak%20dance%20teacher%20instructing%20students%2C%20skilled%20instructor%2C%20professional%20teaching%2C%20high%20quality%20photography&width=300&height=300&seq=achievement3&orientation=squarish"
-                  alt="Teaching Achievement"
-                  className="w-24 h-24 rounded-full object-cover object-top mx-auto mb-6"
-                />
-                <h3 className="text-xl font-bold text-gray-800 mb-2">Anita Patel</h3>
-                <p className="text-amber-600 font-semibold mb-2">Certified Instructor</p>
-                <p className="text-gray-600 text-sm">
-                  "From student to teacher, this journey has been transformative. Now I'm passing on the tradition."
-                </p>
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+              {achievements.map((item, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-gradient-to-r from-red-600 to-amber-500 text-center rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.15 }}
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-64 object-cover object-top"
+                  />
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                    <p className="text-white text-sm">{item.description}</p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -82,3 +121,4 @@ export default function AchievementPage() {
     </div>
   );
 }
+
