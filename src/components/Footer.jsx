@@ -68,9 +68,18 @@ export default function Footer() {
 
       {/* Bottom Section */}
       <div className="border-t border-gray-700 mt-10 pt-4 text-center text-gray-500 text-sm">
-        <p>
-          © {new Date().getFullYear()} Kathak Nrityashala. All rights reserved. | Design by <span className="text-red-600 font-medium">Advertising India</span>
-        </p>
+       <p>
+  © {new Date().getFullYear()} Kathak Nrityashala. All rights reserved. | Design by{' '}
+  <a
+    href="https://websiteseotool.in/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-red-600 font-large bold hover:underline"
+  >
+    Advertising India
+  </a>
+</p>
+
       </div>
     </footer>
   );
